@@ -35,4 +35,31 @@ function getUserByEmail($email) {
     $result = mysqli_query($conn, $sql);
     return mysqli_fetch_assoc($result);
 }
+
+
+// Function to get user information by user ID
+function getUserById($user_id) {
+    global $conn;
+
+    // Prepare and bind parameter
+    $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+
+    // Execute query
+    $stmt->execute();
+
+    // Get result
+    $result = $stmt->get_result();
+
+    // Fetch user information
+    $user = $result->fetch_assoc();
+
+    // Close statement
+    $stmt->close();
+
+    return $user;
+}
+
 ?>
+
+

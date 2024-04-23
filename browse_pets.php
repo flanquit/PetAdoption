@@ -7,6 +7,7 @@ include 'functions/pet_functions.php';
 // Fetch all pets from the database
 $pets = getAllPets();
 
+
 ?>
             <!-- Projects Section-->
             <section class="py-5">

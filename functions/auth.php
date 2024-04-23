@@ -21,14 +21,14 @@ function getUserRole() {
 // Function to check if user is admin
 function isAdmin() {
     $role_id = getUserRole();
-    return $role_id === 1; // Assuming 'admin' role has role_id = 1
+    return $role_id = 1; // Assuming 'admin' role has role_id = 1
 }
 
 // Function to restrict access to admin-only pages
 function restrictToAdmin() {
     if (!isAdmin()) {
         // Redirect to homepage or show error message
-        header("Location: index.html");
+        header("Location: ../client/login.php");
         exit();
     }
 }
@@ -37,7 +37,7 @@ function restrictToAdmin() {
 function restrictToLoggedIn() {
     if (!isLoggedIn()) {
         // Redirect to login page or show error message
-        header("Location: login.html");
+        header("Location: ../client/login.php");
         exit();
     }
 }
