@@ -1,6 +1,8 @@
 <?php
   define('BASE_URL', 'http://localhost/petadoption');
-
+  $base_url = 'http://localhost/petadoption';
+//   include ('functions/db_connection.php');
+  
   if (isset($_GET['user_id'])) {
    // Get user details from Get URK
     $email = $_GET['email'];
@@ -12,7 +14,13 @@
 
     }
 
-   
+   // Calculate total price of products in the cart
+$total_price = 0;
+if (isset($_SESSION['cart_products'])) {
+    foreach ($_SESSION['cart_products'] as $product) {
+        $total_price += $product['price'];
+    }
+}
 
     ?>
 <!DOCTYPE html>
@@ -47,8 +55,43 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/browse_pets.php">Furry Friend</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/shop">Shop</a></li>
-                            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/contact.php">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/shop.php">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/blog.php">Blog</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/contact.php">Contact</a></li> -->
+
+
+
+
+                
+                            <li  class="nav-item">
+                          
+                               <a href="checkout.php"> 
+                                <button class="btn btn-outline-dark">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    Cart
+
+                                    <?php if (isset($_SESSION['cart_products']) && count($_SESSION['cart_products']) > 0): ?>
+
+
+                                    <span class="badge bg-dark text-white ms-1 rounded-pill"><?php echo $total_price; ?></span>
+
+                                    <?php endif; ?>
+                                </button>
+                               </a>
+
+
+                               
+
+      
+
+
+
+                          
+                            </li>
+
+
+
+
                             
                             <li class="nav-item"><a class="nav-link" href="#">
                                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
@@ -80,6 +123,7 @@
                                      
                                     </div>
                             </a></li>
+                               
                            
                         </ul>
                     </div>

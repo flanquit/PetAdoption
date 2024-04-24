@@ -19,6 +19,7 @@ function submitAdoptionApplication($pet_id, $name, $email, $phone, $address, $me
     return $result;
 }
 
+
 // Function to fetch all adoption applications
 function getAllAdoptionApplications() {
     global $conn;
