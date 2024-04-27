@@ -27,9 +27,9 @@ function getPetById($pet_id) {
 }
 
 // Function to update pet details
-function updatePet($pet_id, $name, $species, $breed, $age, $description) {
+function updatePet($pet_id, $name, $species, $breed, $age, $gender, $description) {
     global $conn;
-    $sql = "UPDATE pets SET name='$name', species='$species', breed='$breed', age=$age, description='$description' WHERE pet_id=$pet_id";
+    $sql = "UPDATE pets SET name='$name', species='$species', breed='$breed',gender='$gender', age='$age', description='$description' WHERE pet_id=$pet_id";
     return mysqli_query($conn, $sql);
 }
 

@@ -21,22 +21,77 @@ include('inc/head.php');
 
 
     <form action="<?php echo BASE_URL; ?>/functions/add_pet_process.php" method="post" enctype="multipart/form-data">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+       <div class="row">
+        <div class="col-6">
+            <label for="species">Species:</label><br>
+        <input type="text" id="species" name="species" required><br><br></div>
+
+        <div class="col-6"><label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="0" required><br><br></div>
+        </div>
+
+
+        <div class="row">
+
+        <div class="col-6">
+
+        <label for="gender">Gender:</label><br>
+        <input type="text" id="gender" name="gender"><br><br>
+
+        </div>
+
+        <div class="col-6">
+             
+        <label for="breed">breed:</label><br>
+        <input type="text" id="breed" name="breed"><br><br>
+
+
+        </div>
+
+        </div>
+
+
+
         
-        <label for="species">Species:</label><br>
-        <input type="text" id="species" name="species" required><br><br>
-        
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age" min="0" required><br><br>
-        
+        <div class="row">
+            
+        <div class="col-6">
+            
+        <label for="adoption_fee">adoption_fee:</label><br>
+        <input type="number" id="adoption_fee" name="adoption_fee" min="10" required><br><br>
+
+        </div>
+
+        <div class="col-6">
+              
         <label for="color">Color:</label><br>
         <input type="text" id="color" name="color"><br><br>
         
+        </div>
+
+        </div>
+
+
+        
+        
+        
+        
+        
+
+       
+
+
+
+        
+
+        
+        
+      
         <label for="image">Image:</label><br>
         <input type="file" id="image" name="image" accept="image/*" required><br><br>
         
-        <button type="submit" name="submit">Add Pet</button>
+        <button type="submit" name="submit" class="btn btn-primary">Add Pet</button>
+        
     </form>
 
 

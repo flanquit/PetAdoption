@@ -90,19 +90,51 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pets:</h6>
                         <a class="collapse-item" href="add_pet.php">Add Pet</a>
-                        <h6 class="collapse-header">Products</h6>
-                        <a class="collapse-item" href="add_product.php">Add Products</a>
+                        <a class="collapse-item" href="view_pet.php">Manage Pets</a>
+
+                        <h6 class="collapse-header">Products:</h6>
+                        <a class="collapse-item" href="add_product.php">Create Product</a>
+                        <a class="collapse-item" href="view_products.php">Manage Product</a>
                     </div>
                 </div>
             </li>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Website Management</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Blogs:</h6>
+                        <a class="collapse-item" href="add_blog.php">Create Blog</a>
+                        <a class="collapse-item" href="view_blogs.php">Manage Blogs</a>
+                       
+
+                       
+            
+                    </div>
+                </div>
+            </li> 
+
+            
+
+
+
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
-            </div>
+Promotions            </div>
+
+
+            
 
             <!-- Nav Item - Pages Collapse Menu -->
             <!-- <li class="nav-item">
@@ -126,11 +158,11 @@
             </li> -->
 
             <!-- Nav Item - Charts -->
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li> -->
+                    <span>3rd Adoption 50% </span></a>
+            </li>
 
             <!-- Nav Item - Tables -->
             <!-- <li class="nav-item">

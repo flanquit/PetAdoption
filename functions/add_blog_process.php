@@ -5,16 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     include 'db_connection.php';
 
     // Escape user inputs to prevent SQL injection
-    $name = $conn->real_escape_string($_POST['name']);
-    $species = $conn->real_escape_string($_POST['species']);
-    $age = $_POST['age']; // No need to escape, but validate if necessary
-    $color = $conn->real_escape_string($_POST['color']);
-    $gender = $conn->real_escape_string($_POST['gender']);
-    $adoption_fee = $conn->real_escape_string($_POST['adoption_fee']);
-    $breed = $conn->real_escape_string($_POST['breed']);
+
+
+    $title = $conn->real_escape_string($_POST['title']);
+    $content = $conn->real_escape_string($_POST['content']);
     
     // File upload handling
-    $target_dir = "uploads/pets/"; // Directory where uploaded images will be saved
+    $target_dir = "uploads/blogs/"; // Directory where uploaded images will be saved
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -29,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     }
     
     // Check file size
-    if ($_FILES["image"]["size"] > 500000) {
+    if ($_FILES["image"]["size"] > 500000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -48,8 +45,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     } else {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             echo "The file ". htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
-            // Insert pet details into database
-            $sql = "INSERT INTO pets (name, species, age, color, image_url, gender, adoption_fee, breed) VALUES ('$name', '$species', $age, '$color', '$target_file', '$gender', '$adoption_fee', '$breed')";
+            // Insert blog details into database
+
+            // <!-- 
+            // image
+            // content
+            // created_at -->
+
+            
+            $sql = "INSERT INTO blogs (title, content, image) VALUES ('$title', '$content', '$target_file')";
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
             } else {
