@@ -11,7 +11,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -113,9 +113,6 @@
                         <a class="collapse-item" href="add_blog.php">Create Blog</a>
                         <a class="collapse-item" href="view_blogs.php">Manage Blogs</a>
                        
-
-                       
-            
                     </div>
                 </div>
             </li> 
@@ -260,7 +257,7 @@ Promotions            </div>
                                 aria-labelledby="userDropdown">
                              
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="../logout.php">
+                                <a class="dropdown-item" href="../logout.php" >
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

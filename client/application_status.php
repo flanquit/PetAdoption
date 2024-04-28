@@ -26,12 +26,35 @@ $user_id = $_GET['user_id'];
 
 // Get user's adoption applications
 $applications = getAdoptionApplicationsByEmail($email);
+$applicationsCount = count($applications);
+
+
+// Define a function named "test" that takes a parameter $n
+function promo($n) 
+{
+    // Use the modulo operator to check if $n is divisible by 3 or 7
+    return $n % 3 == 0;
+}
+
+
+// Call the IsPrime function to check if 3 is prime for promo
+
+if (promo($applicationsCount) == true) {
+    $promo = "50% Discount Available";
+    // echo($promo);
+}else{
+    $promo = "";
+
+    // echo($promo);
+}
+
 ?>
             <!-- Projects Section-->
             <section class="py-5">
                 <div class="container px-5 mb-5">
                     <div class="text-center mb-5">
                         <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">My Applications</span></h1>
+                        <p><h4> <b><?php echo($promo) ?></b></h4></p>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">

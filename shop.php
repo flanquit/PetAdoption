@@ -94,7 +94,7 @@ if (isset($_POST['clear_cart'])) {
                             <!-- https://dummyimage.com/450x300/dee2e6/6c757d.jpg -->
 
                             
-                            <img class="card-img-top" src="<?php echo $product['image_url']; ?>" alt="<?php echo $product['name']; ?>">
+                            <img class="card-img-top" src="<?php echo BASE_URL; ?>/functions/<?php echo $product['image_url']; ?>" alt="<?php echo $product['name']; ?>">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

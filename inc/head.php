@@ -43,6 +43,9 @@ if (isset($_SESSION['cart_products'])) {
       
 
         <link href="<?php echo BASE_URL; ?>/css/styles.css" rel="stylesheet" />
+
+
+        
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -57,7 +60,7 @@ if (isset($_SESSION['cart_products'])) {
                             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/browse_pets.php">Furry Friend</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/shop.php">Shop</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/blog.php">Blog</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/contact.php">Contact</a></li> -->
+                            <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>/contact.php">Book A Meeting</a></li>
 
 
 
@@ -130,3 +133,5 @@ if (isset($_SESSION['cart_products'])) {
                 </div>
             </nav>
             <!-- Header-->
+
+            

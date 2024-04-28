@@ -18,16 +18,22 @@ include('inc/head.php');
 
 
     <form action="<?php echo BASE_URL; ?>/functions/add_product_process.php" method="post" enctype="multipart/form-data">
-        <label for="name">Name:</label>
+    <div class="row">
+        <div class="col-6">  
+    <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="category">Category:</label>
+        </div>
+
+          <div class="col-6">  
+        <label for="category">Category:</label><br>
         <input type="text" id="category" name="category" required><br><br>
+          </div>
+    </div>
         
-        <label for="price">Price:</label>
+        <label for="price">Price:</label><br>
         <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
         
-        <label for="image">Image:</label>
+        <label for="image">Image:</label><br>
         <input type="file" id="image" name="image" accept="image/*" required><br><br>
         
         <button type="submit" name="submit">Add Product</button>

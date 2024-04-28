@@ -25,7 +25,7 @@ function getBlogById($id) {
 // Function to update Blog details
 function updateBlog($id, $title, $content) {
     global $conn;
-    $sql = "UPDATE blogs SET title='$title', content='$content', WHERE id=$id";
+    $sql = "UPDATE blogs SET title='$title', content='$content', WHERE id='$id'";
     return mysqli_query($conn, $sql);
 }
 
