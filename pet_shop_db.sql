@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2024 at 10:07 AM
+-- Generation Time: Apr 28, 2024 at 02:45 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,6 +42,20 @@ CREATE TABLE `adoption_applications` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pets`
 --
 
@@ -66,8 +80,7 @@ CREATE TABLE `pets` (
 --
 
 INSERT INTO `pets` (`pet_id`, `name`, `species`, `breed`, `age`, `color`, `gender`, `adoption_fee`, `description`, `image_url`, `available`, `created_at`, `updated_at`) VALUES
-(1, 'PetName', 'Dogs', 'German Shepherd', 3, NULL, 'M', 30.50, 'Nice Dog', '', 0, '2024-04-22 06:04:57', '2024-04-22 23:08:45'),
-(2, 'PetName', 'Dogs', 'Bull Dog', 3, NULL, 'F', 80.30, 'Nice Dog', 'uploads/Screenshot_1.png', 1, '2024-04-22 06:08:57', '2024-04-22 22:58:05');
+(15, '', 'Breed', 'Breed', 4, 'Brack', 'M', 300.00, NULL, 'uploads/pets/61c-pIm5oRL._AC_UF1000,1000_QL80_.jpg', 1, '2024-04-28 00:26:39', '2024-04-28 00:26:39');
 
 -- --------------------------------------------------------
 
@@ -119,6 +132,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role_id`, `created_at`, `updated_at`) VALUES
+(4, 'alflanquit@gmail.com', 'alflanquit@gmail.com', '$2y$10$8gRaT9.D2AYWvD5wwuPQaO2lewk8sFQAbKuEgNPUUdu2YF/7fiZZe', 2, '2024-04-24 09:32:29', '2024-04-28 00:28:09');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -128,6 +148,12 @@ CREATE TABLE `users` (
 ALTER TABLE `adoption_applications`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pet_id` (`pet_id`);
+
+--
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pets`
@@ -162,19 +188,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adoption_applications`
 --
 ALTER TABLE `adoption_applications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -186,7 +218,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
